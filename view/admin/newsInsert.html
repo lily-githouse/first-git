@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加新闻列表</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+</head>
+<body>
+<!--面包屑-->
+<ol class="breadcrumb">
+    <li><a href="#">首页</a></li>
+    <li><a href="#">新闻列表添加</a></li>
+</ol>
+<div class="panel panel-warning">
+    <div class="panel-heading">添加新闻列表</div>
+    <div class="panel-body">
+        <form>
+            <div class="form-group">
+                <label for="exampleInputNname">新闻名称</label>
+                <input type="text" name="xname" class="form-control" id="exampleInputNname" placeholder="新闻名称">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputDetail">新闻详情</label>
+                <input type="text" name="xdetail" class="form-control" id="exampleInputDetail" placeholder="新闻名称">
+            </div>
+            <button type="submit" class="btn btn-default">添加</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
+<script src="../static/js/jquery-3.4.1.min.js"></script>
+<script>
+
+    $("form").on("submit",function(e){
+        e.preventDefault();
+        let qs=$(this).serialize();
+       $.ajax({
+           url:"news_insert.php",
+           type:"POST",
+           dataType:"json",
+           data:qs,
+           context:this,
+           success:function(res){
+               if(res.code==200){
+                   alert(res.msg);
+                   this.reset();
+               }
+               else{
+                   alert(res.msg);
+               }
+           }
+       })
+    })
+
+
+
+</script>

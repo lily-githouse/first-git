@@ -1,0 +1,376 @@
+/* 清除默认样式 */
+body,ul,li,a,button{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration:none !important;
+    color: #333;
+}
+/* 轮播图开始 */
+.banner{
+    position: relative;
+    width: 100%;
+    height: 616px;
+    overflow: hidden;
+}
+/* 图片 */
+.img-box {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+/* .img-box>.img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 300%;
+    height: 100%;
+    z-index: 10!important;
+} */
+.img-box {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.imgList {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1000%;
+    height: 100%;
+}
+
+.imgList .img {
+    width: 10%;
+    height: 100%;
+    float: left;
+}
+
+.img img {
+    width: 100%;
+    height: 100%;
+}
+/* .banner-img{
+    float: left;
+    width: 33.333333%;
+    height: 100%; */
+    /* background-position: center center;
+    background-size: cover;
+}
+.one{
+    background-image: url("../image/index-banner-1.jpg")!important;
+}
+.two{
+    background-image: url("../image/index-banner-2.jpg");     */
+/* } */
+
+/* 按钮 */
+.btn{
+    position: absolute;
+    top: calc(50% - 20px);
+    height: 42px;
+    z-index: 10;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0);
+    margin: 0 autol;
+}
+/* 按钮鼠标移入效果 */
+.btn>img:hover{
+    transform: translateY(-40px);
+    transition: all 1s;
+}
+.btn>img{
+    margin-top:-6px;
+    width: 40px;
+}
+.btn-left{
+    left: 20px;
+}
+.btn-right{
+    right: 40px;
+}
+/* 滑块 */
+.box{
+    position: absolute;
+    bottom: 20px;
+    left: calc(50% - 61px);
+    width: 122px;
+    height: 6px;
+    z-index: 10;
+}
+.boxs{
+    width: 46px;
+    height: 100%;
+    margin-left: 10px;
+    background-color: white;
+    float: left;
+}
+.active{
+    background-color: #ff6000;    
+}
+/* 轮播图结束 */
+/* 内容开始 */
+.contant{
+    color: #8d9095;
+}
+/* 标题 */
+.title{
+    height: 124px;
+    margin: 0 auto;
+    padding: 10px 0;
+    box-sizing: border-box;
+    text-align: center;
+    font-family: 微软雅黑;
+}
+.title-top{
+    font-size: 36px;
+    color: #3e3e3e;
+    line-height: 2em;
+}
+.title-bottom{
+    font-size: 16px;
+    color: rgb(128, 128, 128);
+    line-height: 1.5em;
+}
+/* 服务 */
+.serve{
+    margin: 0 auto;
+    background-color: white;
+}
+.item{
+    padding: 0 5px;
+    margin: 0 auto;
+    float: left;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 16px;
+    opacity: 0;
+}
+/* 动画效果 */
+.serve>.item:nth-child(1){
+    animation-delay:0.2s;  
+}
+.serve>.item:nth-child(2){
+    animation-delay:0.4s; 
+}
+.serve>.item:nth-child(3){
+    animation-delay:0.6s; 
+}
+.serve>.item:nth-child(4){
+    animation-delay:0.8s; 
+}
+.item>img{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.item>strong{
+    font-family: 宋体;
+    font-size: 16px;
+    color: #ff6000;
+}
+.item>.line{
+    width: 182px;
+    height: 1px;
+    margin: 0 auto;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.line-md{
+    width: 70px;
+    margin: 0 auto;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.item>span{
+    font-size: 14px;
+}
+/* 标题2 */
+.title2{
+    height: 171px;
+    margin: 40px auto;
+    padding: 10px 0;
+    box-sizing: border-box;
+    text-align: center;
+    font-family: 微软雅黑;
+    font-size: 40px;
+    color: #3e3e3e;
+}
+.car{
+    margin: auto;
+    margin-top: 10px;
+}
+/* 公司简介 */
+.introduce{
+    margin: 0 auto;
+    font-family: 微软雅黑;
+    font-size: 14px;
+    color: #808080;
+}
+.int-image{
+    opacity: 0;    
+}
+.int-image>img{
+    margin: 0 auto;
+    width: 100%;
+}
+/* 简介内容 */
+.int-text{
+    margin-top: -10px;
+    text-align: left;
+    box-sizing: border-box;
+}
+/* 标题 */
+.text-title{
+    margin-bottom: 15px;
+    font-family: 微软雅黑;
+    line-height: 20px;
+    font-size: 18px;
+    height: 30px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+.int{
+    color: #ff6000;    
+    float: left;
+}
+.more{
+    color: #ff6000;
+    font-size: 12px;
+    float: right;
+}
+/* 文本 */
+.int-text>span{
+    color: #808080;
+    line-height: 1.5em;
+}
+/* 美容知识 */
+.list{
+    color: #808080;
+    border-bottom: 1px dotted #c1c1c1;
+}
+/* 内联式 */
+.know .list:hover span{
+    color: #e40000;
+}
+.list>.right{
+    color: #c9c9c9;
+    font-size: 12px;
+    float: right;
+}
+.last{
+    border: none;
+}
+.know-image{
+    opacity: 0;
+}
+.know-image>img{
+    margin: 0 auto;
+    width: 100%;
+    margin-bottom: 100px;
+}
+/* 内容结束 */
+
+/* 通过媒体查询根据不同的屏幕宽度显示不同的 */
+/* 大屏 */
+@media screen and (min-width: 1200px){
+    /* 服务 */
+    .serve{
+        margin-top: 40px;
+    }
+    /* 美容知识 */
+    .list{
+        padding: 5px 10px;        
+    }
+    .knowledge>.int-text{
+        margin-top: 20px;
+    }
+    .know-image{
+        margin-top: 10px;
+    }
+}
+/* 中屏 */
+@media screen and (min-width: 992px) and (max-width: 1200px){
+    /* 服务 */
+    .serve{
+        margin-top: 40px;
+    }
+    /* 简介 */
+    .int-image{
+        margin-top: -20px;
+    }
+    .int-text{
+        margin-top: -40px;
+    }
+    /* 美容知识 */
+    .list{
+        padding: 5px 10px;        
+    }
+    .knowledge>.int-text{
+        margin-top: 20px;
+    }
+    .know-image{
+        margin-top: 20px;
+    }
+}
+/* 小屏 */
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    /* 标题 */
+    .title-top{
+        font-size: 24px;
+    }
+    /* 简介 */
+    .int-image{
+        margin-top: -20px;
+        margin-left: 10%;
+    }
+    .int-text{
+        margin-top: 20px;
+    }
+    /* 美容知识 */
+    .list{
+        padding: 5px 0;        
+    }
+    .know-image{
+        margin-left: 15%;
+        margin-top: 20px;
+    }
+}
+/* 超小屏 */
+@media only screen and (max-width: 768px){
+    /* 标题 */
+    .title-top{
+        font-size: 24px;
+    }
+    .title-bottom{
+        font-size: 14px;
+    }
+    /* 服务 */
+    .item>span{
+        font-size: 13px;
+    }
+    /* 标题2 */
+    .title2{
+        font-size: 26px;
+    }
+    /* 简介 */
+    .int-image{
+        margin-top: -80px;
+        margin-left: 10%;
+    }
+    .int-text{
+        margin-top: 10px;
+    }
+    /* 美容知识 */
+    .list{
+        padding: 5px 0;        
+    }
+    .knowledge{
+        margin-top: 10px;
+    }
+    .know-image{
+        margin-left: 10%;
+        margin-top: 20px;
+    }
+}

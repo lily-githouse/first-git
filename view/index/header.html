@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/Animate.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1380563_r7jmp3f2vmd.css">
+    <link rel="stylesheet" href="../static/css/public.css">
+    <script src="../static/js/public.js"></script>
+    <script src="../static/js/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+<!-- 头部导航开始 -->
+<header>
+    <div class="logo">
+        <a href="">
+            <img src="../static/image/logo.png" alt="">
+        </a>
+    </div>
+    <div class="right">
+        <ul>
+            <li>
+                <a href="index.html" class="text text-t"> 首页 </a>
+            </li>
+            <?php
+            foreach($nav as $key=>$value){ ?>
+            <li><a href="category.php?id=<?php echo $value['id']; ?>"><?php echo $value["nname"];?></a></li>
+          <?php  } ?>
+        </ul>
+    </div>
+</header>
+<!-- 小于992的下拉列表 -->
+<div class="xxk">
+    <span class="x">首页</span>
+    <span class="x-1">
+            <i class="iconfont icon-xiala"></i>
+        </span>
+</div>
+<a href="">
+    <ul class="xialakuang" style="display: none;">
+        <a href="index.html">
+            <li>首页</li>
+        </a>
+        <?php foreach($nav as $key=>$value){ ?>
+        <a href="category.php?id=<?php echo $value['id']; ?>">
+            <li><?php echo $value["nname"];?></li>
+        </a>
+       <?php } ?>
+    </ul>
+</a>
+<!-- 滚动后的头部  -->
+<div class="middle">
+    <div class="logo">
+        <a href="">
+            <img src="../static/image/logo.png" alt="">
+        </a>
+    </div>
+    <div class="right">
+        <ul>
+            <li>
+                <a href="index.html" class="text text-t"> 首页 </a>
+            </li>
+            <?php
+            foreach($nav as $key=>$value){ ?>
+            <li><a href="category.php?id=<?php echo $value['id']; ?>"><?php echo $value["nname"];?></a></li>
+            <?php  } ?>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

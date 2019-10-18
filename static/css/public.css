@@ -1,0 +1,251 @@
+*{
+    margin:0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: "微软雅黑"；
+}
+a{
+	text-decoration: none;
+}
+a:hover{
+	text-decoration: none;
+}
+/* 滚动后的头部 */
+.middle{
+    width:100%;
+    height:90px;
+    display: flex;
+    justify-content: space-around;
+    background: black; 
+    align-items: center;
+    position: fixed;
+    top:0;
+    left:0;
+    z-index:888;
+}
+.middle .logo img{
+    width: 173px;
+    height: 100%;
+}
+.middle .right{
+    width:700px;
+    height:90px;
+    line-height: 90px;
+}
+.middle ul{
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+}
+.middle li{
+    float: left;
+}
+.middle .right a{
+    font-size: 14px;
+    color: gray;
+}
+.middle .right .text-1{
+    margin-left: 100px;
+}
+.middle .right .text-t{
+    color: orangered;
+}
+.middle .right a:hover{
+    color: orangered;
+}
+/* 头部 */
+header{
+    width:100%;
+    height:90px;
+    display: flex;
+    justify-content: space-around;
+    background: black; 
+    align-items: center;
+}
+header .logo img{
+    width: 173px;
+    height: 100%;
+}
+header .right{
+    width:700px;
+    height:90px;
+    line-height: 90px;
+}
+header ul{
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+}
+header li{
+    float: left;
+}
+header .right a{
+    font-size: 14px;
+    color: gray;
+}
+header .right .text-1{
+margin-left: 100px;
+}
+header .right .text-t{
+    color: orangered;
+}
+header .right a:hover{
+    color: orangered;
+}
+header .bottom{
+    display: none;
+}
+/* 底部 */
+.bar{
+    width:100%;
+    height:355px;
+    background: black; 
+    align-items: center;    
+}
+.bar-b{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 30px ;
+}
+.bar .address{
+    /* margin-left: 30px; */
+    color: gray;
+    font-size: 14px;
+}
+.bar .address:first-child{
+    margin-left: 0;
+}
+.bar strong{
+    font-size: 17px;
+    color: orangered;
+}
+.bar .s{
+color: #fff;
+}
+.icon{
+    height: 36px;
+    text-align: center;
+    margin-top:50px;
+}
+.icon i{
+    font-size: 30px;
+    color: #fff;
+}
+.icon span{
+    font-size: 12px;
+    color: #fff;
+}
+.xxk{
+    display: none;
+}
+.zdJiantou{
+    width: 34px;
+    height: 34px;
+    position: fixed;
+    right: 30px;
+    bottom: 40px;
+}
+.zdJiantou i{
+    color: white;
+}
+.dbbottom{
+    display: none;
+}
+
+/* 超小屏 */
+@media screen and (max-width:768px){
+    /* 标题动画效果 */
+    .about-title-zw{
+        transform: scale(0.5);
+        transition: 1s;
+    }
+    .about-title-yw{
+        transform: scale(2);
+        transition: 1s;
+    }
+}
+/* 小屏 */
+@media screen and (max-width:992px){
+    /* 头部 */
+    header .logo{
+        margin:0 auto;
+    }
+    header .logo img{
+        width: 165.5px;
+        height: 100%;
+    }
+    header .right{
+		display: none;
+    }
+    .dbbottom{
+        width: 100%;
+        height: 42px;
+        background: #f0443a;
+        text-align: center;
+        line-height: 42px;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        color: #fff;
+        z-index: 999;
+        display: block;
+    }
+    .xxk{
+        display: block;
+        width: 100%;
+        height: 44px;
+        background: #f0443a;
+        line-height: 42px;
+        color: #fff;
+        font-size: 14px;
+  
+    }
+    .xxk .x{
+        float: left;
+        margin-left: 20px; 
+    }
+    .xxk .x-1{
+        float: right;
+        margin-right: 20px;
+    }
+    .xialakuang{
+        width: 100%;
+        color:white;
+        background: black;
+        position: absolute;
+        top:133px;
+        left: 0;
+        z-index: 1000;
+    }
+    .xialakuang a li{
+        width: 100%;
+        height: 44px;
+        padding-left: 30px;
+        line-height: 44px;
+        opacity: 0;
+    }
+    .xialakuang a:hover li{
+        color:#fff;
+        background: #f0443a;
+        opacity: 1;
+    }
+    .middle{
+        display: none;
+    }
+    /* 底部 */
+    .bar{
+         height:150px;
+    }
+    .bar .bar-b{
+    display: none;
+    }
+    .icon{
+        height: 36px;
+        text-align: center;
+        padding-top: 50px;
+    }
+    .icon span{
+        display: none;
+    }
+}

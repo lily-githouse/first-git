@@ -1,0 +1,151 @@
+<link rel="stylesheet" href="../static/css/productson.css">
+<div class="container">
+    <div class="box">
+        <!-- 产品中心大图 -->
+        <div class="row">
+            <div class="banner-img col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <img src="../static/image/products2-banner.jpg" alt="无法显示">
+            </div>
+        </div>
+        <?php foreach($goods as $key=>$value){ ?>
+        <!-- 标题文字 -->
+        <div class="titleword col-lg-12 col-md-12 col-sm-12 col-xs-12"><?php echo $value['gname'];?></div>
+        <!-- 标题文字结束 -->
+        <!-- 内容开始 -->
+        <div class="row">
+            <div class="content col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="content-box ">
+                    <!-- 左边轮播图 -->
+                    <div class="box-left col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="content-all">
+                            <div class="content-pic">
+                                <img src="<?php echo $value['gthumb'];?>" alt="无法显示">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 右边介绍 -->
+                    <div class="box-right col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="x-line">
+                            <div class="market-price">
+                                市场价：<?php echo $value['mprice'];?>
+                            </div>
+                            <div class="onsell">
+                                <div class="onsell-left">
+                                    零售价：
+                                </div>
+                                <div class="onsell-right">
+                                    <?php echo $value['gsale'];?>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="serve">
+                            库存状况： <?php echo $value['gstock'];?>
+                        </div>
+                    </div>
+                </div>
+                <!-- 详情 -->
+                <div class="text col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="name">
+                        商品介绍
+                    </div>
+                    <div class="phrase-a">
+                        <?php echo $value['gdetail'];?>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php } ?>
+        <!-- 内容结束 -->
+    </div>
+</div>
+<!-- 底部 -->
+<div class="bar">
+    <div class="bar-b">
+        <div class="address">
+            <div>
+                <strong>一店地址</strong>
+            </div>
+            <div>
+                <span>门店地址：上海市松江区佘山林荫大道18号</span>
+            </div>
+            <p>
+                <span>预约电话:</span>
+                <strong>400-562-6654 </strong>
+            </p>
+            <p>
+                <strong class="s">营业时间：</strong>
+            </p>
+            <p>
+                <span>周一 ~周五：上午9:30-下午8:00</span>
+            </p>
+            <p>
+                <span>周六、周日：上午10:00-下午9:00</span>
+            </p>
+        </div>
+        <div class="address">
+            <div>
+                <strong>一店地址</strong>
+            </div>
+            <div>
+                <span>门店地址：上海市松江区佘山林荫大道18号</span>
+            </div>
+            <p>
+                <span>预约电话:</span>
+                <strong>400-562-6654 </strong>
+            </p>
+            <p>
+                <strong class="s">营业时间：</strong>
+            </p>
+            <p>
+                <span>周一 ~周五：上午9:30-下午8:00</span>
+            </p>
+            <p>
+                <span>周六、周日：上午10:00-下午9:00</span>
+            </p>
+        </div>
+        <div class="address">
+            <div>
+                <strong>一店地址</strong>
+            </div>
+            <div>
+                <span>门店地址：上海市松江区佘山林荫大道18号</span>
+            </div>
+            <p>
+                <span>预约电话:</span>
+                <strong>400-562-6654 </strong>
+            </p>
+            <p>
+                <strong class="s">营业时间：</strong>
+            </p>
+            <p>
+                <span>周一 ~周五：上午9:30-下午8:00</span>
+            </p>
+            <p>
+                <span>周六、周日：上午10:00-下午9:00</span>
+            </p>
+        </div>
+    </div>
+    <div class="icon">
+        <i class="iconfont icon-qq"></i>
+        <i class="iconfont icon-weixin1"></i>
+        <i class="iconfont icon-email"></i>
+        <i class="iconfont icon-dianhua1"></i>
+        <i class="iconfont icon-face-book"></i>
+        <div>
+            <span>版权所有 2019-2020 汽车美容工作室 技术支持：起飞页</span>
+        </div>
+    </div>
+</div>
+<!-- 小于992的底部 -->
+<a href="">
+    <div class="dbbottom">
+        在线预约
+    </div>
+</a>
+<div class="zdJiantou">
+    <a href="">
+        <i class="iconfont icon-fanhuidingbu1"></i>
+    </a>
+</div>
+
+

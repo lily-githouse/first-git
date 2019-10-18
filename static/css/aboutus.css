@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+/* banner开始 */
+.banner-img {
+    margin: 20px auto 0;
+}
+
+.banner-img img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+}
+/*  关于我们*/
+.about {
+    margin-bottom: 20px;
+    padding: 40px 20px 0 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.about-left {
+    width: 35%;
+    border: 1px solid #d6d6d6;
+}
+.about-middle {
+    margin: 0 auto;
+}
+.about-title-zw {
+    width: 110%;
+    font-size: 32px;
+    font-family: 微软雅黑;
+    color: #333333;
+}
+.about-title-yw {
+    font-size: 14px;
+    color: #a5a5a5;
+    text-align: center;
+}
+.about-right {
+    width: 35%;
+    border: 1px solid #d6d6d6;
+}
+/* 内容开始 */
+.about-content {
+    margin-top: 10px;
+    padding: 20px 20px 0;
+    box-sizing: border-box;
+   
+}
+.about-content-left {
+    padding-top: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    box-sizing: border-box;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 1px;
+}
+
+.about-content-wz {
+    padding: 3px 1px;
+    box-sizing: border-box;
+    margin-bottom: 25px;
+}
+.about-content-wenzi {
+    padding: 3px;
+    box-sizing: border-box;
+    margin-bottom: 25px;
+}
+.about-content-wenz {
+    padding: 3px;
+    box-sizing: border-box;
+    margin-top: 25px;
+}
+
+.about-righttupian {
+    padding: 8px 20px 20px;
+    box-sizing: border-box;
+}
+
+.about-righttupian img {
+    width: 100%;
+    height: 100%;
+}
+/* 产品介绍内容开始  */
+.people-content {
+    margin-bottom: 60px;
+}
+
+.people-first {
+    margin-top: 50px;
+    padding: 0 5px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.people-first-tu {
+    height: 200px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.people-first-tu img {
+    height: 100%;
+    border-radius: 70%;
+    overflow: hidden;
+}
+
+.people-wenzi {
+    margin-top: 20px;
+}
+
+.people-wenz {
+    font-size: 26px;
+    color: rgb(0, 0, 0);
+}
+
+.people-first-wenzi{
+    font-size: 14px;
+    color: #F0443A;
+}
+/* 大屏 */
+@media screen and (min-width:1200px) {
+}
+/* 中屏 */
+@media screen and (min-width:992px) and (max-width:1200px) {  
+}
+/* 小屏 */
+@media screen and (min-width:768px) and (max-width:992px) {
+    .banner-img{
+        margin-top:0;
+    }
+    .about {
+        height: auto;
+    }
+    .about-righttupian{
+        margin: 20px 10% 0;
+    }
+    .people-content {
+        margin-bottom: 10px;
+    }
+    .people-first {
+        margin: 20px auto;
+    }
+}
+/* 超小屏 */
+@media screen and (max-width:768px) {
+    .banner-img{
+        margin-top:0;
+    }
+    .about {
+        height: auto;
+    }
+    .people-content {
+        margin-bottom: 10px;
+    }
+    .people-first {
+        margin: 20px auto;
+    }
+}

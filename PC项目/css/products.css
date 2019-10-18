@@ -1,0 +1,178 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+a {
+    list-style: none;
+    text-decoration: none;
+    color: black;
+}
+ul,
+li {
+    padding: 0;
+}
+/* 产品中心大图部分开始 */
+.banner-img {
+    margin: 20px auto 0;
+}
+.banner-img img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+}
+/* 产品中心大图部分结束 */
+/* 产品中心标题部分开始 */
+.about {
+    margin-bottom: 20px;
+    padding: 40px 20px 0 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.about-left {
+    width: 35%;
+    border: 1px solid #d6d6d6;
+}
+.about-middle {
+    margin: 0 auto;
+}
+.about-title-zw {
+    width: 110%;
+    font-size: 32px;
+    font-family: 微软雅黑;
+    color: #333333;
+}
+.about-title-yw {
+    font-size: 14px;
+    color: #a5a5a5;
+    text-align: center;
+}
+.about-right {
+    width: 35%;
+    border: 1px solid #d6d6d6;
+}
+/* 产品中心标题部分结束 */
+/* 产品选项卡 */
+.picture{
+    position: relative;
+    background-color: blue;
+}
+.item-box {
+    height: 600px;
+    position: absolute;
+}
+.item {
+    list-style: none;
+    float: left;
+}
+.item>span {
+    color: red;
+    font-size: 16px;
+    margin-right: 15px;
+    margin-top: 20px;
+}
+/* 选项卡内容 */
+.firstrow-picture {
+    position: absolute;
+    left: 0;
+    top:0;
+    width: 100%;
+    margin: 0 auto;
+    opacity: 0;
+}
+.underline{
+    width: 65px;
+    height: 2px;
+}
+.sel{
+    background-color:rgba(255,0,0,0.7);
+}
+.p-box {
+    text-align: center;
+    list-style: none;
+    min-height: 60px;
+    margin-bottom:5px;
+    padding-bottom: 5px;
+}
+.p-item>a>img {
+    width: 200px;
+    height: 200px;
+    padding: 6px;
+    border: solid 1px gray;
+    margin: 20px 26px;
+}
+.p-word {
+    text-align: center;
+    font-size: 15px;
+}
+.p-word>a:hover {
+    color: red;
+}
+.p-item>a{
+    z-index: 999;
+}
+/* 产品结束 */
+/* 媒体查询 */
+@media screen and (min-width:1200px) {
+    .firstrow-picture {
+        width: 1140px;
+        margin-top: 50px;
+    }
+    .p-item>a {
+        display:block;
+    }
+    .p-word>a{
+        display: block;
+    }
+}
+@media screen and (min-width:992px) and (max-width:1200px) {
+    .firstrow-picture{
+        margin: 0 auto;
+        margin-top: 50px;
+        min-width: 992px;
+    }
+}
+@media screen and (min-width:768px) and (max-width:992px) {
+    .banner-img {
+        margin-top: 0;
+    }
+    .banner-img img {
+        width: 100%;
+    }
+    .firstrow-picture{
+        min-width: 768px;
+        margin: 8% auto ;
+        margin-top: 20px;
+        padding-right: 15%;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+    .bar {
+        margin-top: 2000px !important;
+    }
+}
+@media only screen and (max-width:768px) {
+    .banner-img {
+        margin-top: 0;
+    }
+    .banner-img img {
+        width: 100%;
+    }
+    .car-picture {
+        width: 100%;
+        height: 100%;
+    }
+    .firstrow-picture{
+        margin:0 auto ;
+        margin-top: 20px;
+        min-width:500px;
+        /* margin-left: 30%; */
+   
+        overflow: hidden;
+    }
+    .bar {
+        margin-top: 2000px !important;
+    }
+}

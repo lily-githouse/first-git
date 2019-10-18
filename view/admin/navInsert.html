@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>导航添加</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <script src="../static/js/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+<!--面包屑-->
+<ol class="breadcrumb">
+    <li><a href="#">首页</a></li>
+    <li><a href="#">导航添加</a></li>
+</ol>
+<div class="panel panel-warning">
+    <div class="panel-heading">添加导航</div>
+    <div class="panel-body">
+        <form>
+            <div class="form-group">
+                <label for="exampleInputNname">中文名称</label>
+                <input type="text" name="nname" class="form-control" id="exampleInputNname" placeholder="中文名称">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEname">英文名称</label>
+                <input type="text" name="ename" class="form-control" id="exampleInputEname" placeholder="英文名称">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputSort">数字排序</label>
+                <input type="number" name="nsort" class="form-control" id="exampleInputSort" placeholder="数字排序">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputNtpl">栏目模板</label>
+                <input type="text" name="ntpl" class="form-control" id="exampleInputNtpl" placeholder="栏目模板">
+            </div>
+            <button type="submit" class="btn btn-default">添加</button>
+        </form>
+    </div>
+</div>
+
+
+</body>
+</html>
+<script>
+    $("form").on("submit", function (e) {
+        e.preventDefault();
+        //    获取表单的值
+        let qs = $(this).serialize();  //序列化表单的值为查询字符串
+        $.ajax({
+            url: "nav_insert.php",
+            type: "POST",
+            dataType: "json",
+            data: qs,
+            context: this,
+            success: function (res) {
+                if (res.code == 200) {
+                    console.log("添加导航成功");
+                    this.reset();
+                } else if (res.code == 404) {
+                    console.log("添加导航失败");
+                }
+            }
+        })
+    })
+
+
+</script>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>查看预约</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+<style>
+    td > input {
+        border: none;
+        outline: none;
+    }
+</style>
+<!--同insert.html-->
+<!--面包屑-->
+<ol class="breadcrumb">
+    <li><a href="#">首页</a></li>
+    <li><a href="#">查看预约</a></li>
+</ol>
+<div class="panel panel-warning">
+    <div class="panel-heading">导航查看</div>
+    <div class="panel-body">
+        <table class="table table-striped <?php echo count($result)?'':'hidden';?>"> <!-- hidden/show类名-->
+            <thead>
+            <tr>
+                <th>预约服务名称</th>
+                <th>预约日期</th>
+                <th>预约人姓名</th>
+                <th>预约人性别</th>
+                <th>预约人电话</th>
+                <th>补充说明</th>
+                <th>验证码</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php
+    foreach($result as $key=>$value){
+            ?>
+            <tr id="<?php echo $value['id'];?>">
+                <!--  添加自定义属性获得旧值-->
+                <td><input type="text" name="osname" value="<?php echo $value['osname'];?>"
+                           data-values="<?php echo $value['osname'];?>"></td>
+                <td><input type="text" name="odate" data-values="<?php echo $value['odate'];?>"
+                           value="<?php echo $value['odate'];?>"></td>
+                <td><input type="text" name="orname" data-values="<?php echo $value['orname'];?>"
+                           value="<?php echo $value['orname'];?>"></td>
+                <td><input type="text" name="osex" data-values="<?php echo $value['osex'];?>"
+                           value="<?php echo $value['osex'];?>"></td>
+                <td><input type="text" name="otel" data-values="<?php echo $value['otel'];?>"
+                           value="<?php echo $value['otel'];?>"></td>
+                <td><input type="text" name="oadd" data-values="<?php echo $value['oadd'];?>"
+                           value="<?php echo $value['oadd'];?>"></td>
+                <td><input type="text" name="ocode" data-values="<?php echo $value['ocode'];?>"
+                           value="<?php echo $value['ocode'];?>"></td>
+                <td>
+                    <button class="btn  btn-danger btn-delete">删除</button>
+                </td>
+            </tr>
+            <?php
+}
+    ?>
+            </tbody>
+        </table>
+        <div class="<?php echo count($result)?'hidden':'';?>">暂无数据</div>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    // 查看预约
+    $.ajax({
+        url: "online_select.php",
+        dataType: "json",
+        type: "GET",
+    })
+    // 修改预约(事件委派)
+    $("tbody").on("blur", "input", function () {
+        let value = this.value.trim();
+        let name = this.name.trim();
+        let id = $(this).closest("tr").attr("id");
+        let oldvalue = this.dataset.values;
+        // 修改之后的值不为空，且新值不和原值一样，发起ajax请求
+        value.length && value != oldvalue && $.ajax({
+            type: "POST",
+            url: "online_update.php",
+            data: {value, name, id},
+            dataType: "json",
+            success: function (res) {
+                if (res.code == 200) {
+                     alert(res.msg);
+                } else {
+                    alert(res.msg);
+                }
+            }
+        })
+    })
+    // 取消预约
+$("tbody").on("click",".btn-delete",function(){
+    let id = $(this).closest("tr").attr("id");
+    $.ajax({
+        type:"POST",
+        url:"online_delete.php",
+        data:{id},
+        dataType:"json",
+        success:function(res){
+            if(res.code==200){
+                $("#"+id).remove();
+            }
+            else{
+                alert(res.msg);
+            }
+        }
+    })
+})
+</script>

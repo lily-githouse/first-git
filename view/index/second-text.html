@@ -1,0 +1,166 @@
+<link rel="stylesheet" href="../static/css/new.css">
+<!-- //显示区域的大盒子 -->
+<div class="bit_main_content">
+    <!-- //显示内容区域的大盒子 -->
+    <div class="container">
+        <div class="box">
+            <div class="row">
+                <div class="banner-img col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <img src="../static/image/新闻资讯-banner-3.jpg" alt=" ">
+                </div>
+            </div>
+            <!-- 显示中间标题开始 -->
+            <div class="row about col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="column about-left "></div>
+                <div class="column about-middle">
+                    <div class="about-title-zw"><?php echo $navl['nname'];?></div>
+                    <div class="about-title-yw"><?php echo $navl['ename'];?></div>
+                </div>
+                <div class="column about-right"></div>
+            </div>
+            <!-- 中间标题结束 -->
+            <!-- 中间文本开始 -->
+            <div class="row ">
+                <div class="hidden-text-btn col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="hidden-container ">
+                        <div class="h-wrapper ">
+                            <h1>
+                                <div class="hidden-title "><?php echo $new['xname'];?></div>
+                            </h1>
+                        </div>
+                        <div class="hidden-date ">发布日期 <span><?php echo $new['xtime'];?></span></div>
+                        <div class="hidden-text ">
+                            <div class="hidden-text-first ">
+                                <span>&nbsp;<?php echo $new['xdetail'];?>&nbsp;</span>
+                            </div>
+                            <div class="hidden-text-seconed "><span>&nbsp;<?php echo $new['xdetail'];?>&nbsp;</span>
+                            </div>
+                            <div m-padding="0px 0px 0px 0px " p-padding="0px 0px 0px 0px " css_animation_delay="0 "
+                                 qfyuuid="qfy_column_text_foutl "
+                                 class="qfy-element qfy-text qfy-text-27561 qfe_text_column qfe_content_element "
+                                 style="position:relative;line-height:1.5em;;background-repeat: no-repeat;;margin-top:10px; ">
+                                <div>
+                                    <div><span>&nbsp;<?php echo $new['xdetail'];?>&nbsp;</span>
+                                    </div>
+                                    <div><span>&nbsp;<?php echo $new['xdetail'];?>&nbsp;</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="red-text ">
+                            <?php
+                                    $sql="select * from news where id<$id order by id desc limit 0,1";
+                            $res=$mysql->query($sql)->fetch_assoc();
+                            $address="./ndetail.php?id=".$res['id'];
+                            $str="javascript:;";
+                            ?>
+                            <div class="inner ">
+                                <a href="<?php echo $res?$address:$str;?> ">
+                                    <span class="innerr ">上一篇 </span>
+                                    <span class="innerrr "><?php echo $res?$res['xname']:"没有了";?></span>
+                                </a>
+                            </div>
+                            <div class="inner last ">
+                                <?php
+                                    $sql="select * from news where id>$id order by id asc limit 0,1";
+                                $res=$mysql->query($sql)->fetch_assoc();
+                                $address="./ndetail.php?id=".$res['id'];
+                                $str="javascript:;";
+                                ?>
+                                <a href="<?php echo $res?$address:$str;?>">
+                                    <span class="innert ">下一篇 </span>
+                                    <span class="innertt "><?php echo $res?$res['xname']:"已到最后一篇";?></span>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="backbtn ">
+                        <a href="category.php?id=43;">
+                            <button onclick="backlistbtn(this) " class="btn btn-default "
+                                    type="button ">返回列表
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 底部图片开始 -->
+        <div class="container ">
+            <div class="new-bottom-imgcontainer ">
+                <img src="../static/image/新闻资讯-banner-2.png " alt=" ">
+            </div>
+        </div>
+    </div>
+    <!-- 底部图片结束 -->
+    <!-- 底部留白开始 -->
+    <!-- <div class="bottom-gap "></div> -->
+    <!-- 底部留白结束 -->
+    <!-- 底部 -->
+    <div class="bar ">
+        <div class="bar-b ">
+            <div class="address ">
+                <div><strong>一店地址</strong></div>
+                <div></div>
+                <div><span>门店地址：上海市松江区佘山林荫大道18号</span></div>
+                <p><span>预约电话:</span> <strong>400-562-6654 </strong></p>
+                <p></p>
+                <p><strong class="s ">营业时间：</strong></p>
+                <p><span>周一 ~周五：上午9:30-下午8:00</span></p>
+                <p><span>周六、周日：上午10:00-下午9:00</span></p>
+            </div>
+            <div class="address ">
+                <div><strong>一店地址</strong></div>
+                <div></div>
+                <div><span>门店地址：上海市松江区佘山林荫大道18号</span></div>
+                <p><span>预约电话:</span> <strong>400-562-6654 </strong></p>
+                <p></p>
+                <p><strong class="s ">营业时间：</strong></p>
+                <p><span>周一 ~周五：上午9:30-下午8:00</span></p>
+                <p><span>周六、周日：上午10:00-下午9:00</span></p>
+            </div>
+            <div class="address ">
+                <div><strong>一店地址</strong></div>
+                <div></div>
+                <div><span>门店地址：上海市松江区佘山林荫大道18号</span></div>
+                <p><span>预约电话:</span> <strong>400-562-6654 </strong></p>
+                <p></p>
+                <p><strong class="s ">营业时间：</strong></p>
+                <p><span>周一 ~周五：上午9:30-下午8:00</span></p>
+                <p><span>周六、周日：上午10:00-下午9:00</span></p>
+            </div>
+        </div>
+        <div class="icon ">
+            <i class="iconfont icon-qq "></i>
+            <i class="iconfont icon-weixin1 "></i>
+            <i class="iconfont icon-email "></i>
+            <i class="iconfont icon-dianhua1 "></i>
+            <i class="iconfont icon-face-book "></i>
+            <div>
+                <span>版权所有 2019-2020 汽车美容工作室 技术支持：起飞页</span>
+            </div>
+        </div>
+    </div>
+    <!-- 小于992的底部 -->
+    <a href=" ">
+        <div class="dbbottom ">
+            在线预约
+        </div>
+    </a>
+    <div class="zdJiantou ">
+        <a href=" ">
+            <i class="iconfont icon-fanhuidingbu1 "></i>
+        </a>
+    </div>
+</div>
+<script src="../static/js/jquery-3.4.1.min.js"></script>
+<script>
+    $.ajax({
+        type: "GET",
+        url: "ndetail.php",
+        dataType: "json",
+        data: {},
+    })
+
+</script>

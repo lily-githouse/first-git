@@ -1,0 +1,278 @@
+/* 响应式注意：宽度要设置成百分比 */
+
+body,
+a,
+ul,
+li,
+input,
+button,
+label {
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    border: none;
+}
+
+
+/* 在线预约banner开始 */
+
+.online {
+    margin: 20px auto 0;
+}
+
+.online img {
+    width: 100%;
+    /* height: auto; */
+    /* max-width: 100%; */
+}
+
+
+/* 查询轮播图片在不同屏幕下的宽度 */
+
+@media screen and (max-width:768px) {
+    .online {
+        margin: 0 auto;
+    }
+    .online>img {
+        max-width: 768px;
+        width: 100%;
+        display: block;
+        margin: 0 auto!important;
+    }
+    .about {
+        max-width: 768px;
+        height: auto;
+    }
+    .INPUTBOX .inputbox {
+        margin: 0!important;
+        width: 100%!important;
+    }
+    label {
+        width: 100%;
+        display: block;
+    }
+    .name input {
+        max-width: 367px;
+    }
+    .tel input {
+        max-width: 367px;
+    }
+    .notes textarea {
+        max-width: 367px;
+    }
+    .codes input {
+        max-width: 367px;
+    }
+    .codes .code {
+        width: 100%;
+        margin-left: 100px!important;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:992px) {
+    .online {
+        margin: 0 auto;
+    }
+    .online>img {
+        max-width: 768px;
+        width: 100%;
+        display: block;
+        margin: 0 auto!important;
+    }
+    .about {
+        max-width: 768px;
+        width: 100%;
+        height: auto;
+    }
+    .INPUTBOX .inputbox p {
+        max-width: 768px;
+    }
+    .INPUTBOX .inputbox .ntnc {
+        max-width: 526px!important;
+    }
+}
+
+@media screen and (min-width:992px) and (max-width:1200px) {}
+
+@media screen and (min-width:1200px) {
+    .INPUTBOX .inputbox .ntnc {
+        max-width: 298px;
+    }
+}
+
+
+/* 在线预约banner结束 */
+
+
+/* 在线预约标题开始 */
+
+.about {
+    margin: 0 auto;
+    margin-bottom: 50px;
+    padding: 40px 20px 0 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.about-left {
+    width: 40%;
+    border: 1px solid #d6d6d6;
+}
+
+.about-middle {
+    margin: 0 auto;
+}
+
+.about-title-zw {
+    width: 110%;
+    font-size: 32px;
+    font-family: 微软雅黑;
+    color: #333333;
+}
+
+.about-title-yw {
+    font-size: 14px;
+    color: #a5a5a5;
+    text-align: center;
+}
+
+.about-right {
+    width: 40%;
+    border: 1px solid #d6d6d6;
+}
+
+
+/* 在线预约标题结束*/
+
+
+/* 在线预约信息部分开始  */
+
+.INPUTBOX {
+    margin: 0 auto 60px;
+    padding-top: 20px;
+    box-sizing: border-box;
+    max-width: 1024px;
+    width: 100%;
+}
+
+.INPUTBOX .inputbox {
+    margin: 0 auto;
+    padding: 0 5px;
+    box-sizing: border-box;
+    max-width: 492px;
+}
+
+.INPUTBOX .inputbox p {
+    max-width: 492px;
+}
+
+.INPUTBOX .inputbox p label {
+    width: 100px;
+    color: #292929;
+    font-size: 14px;
+    font-family: 微软雅黑;
+    font-weight: normal;
+    margin: 0;
+}
+
+
+/* 姓名，电话，补充说明，验证码的input宽度 */
+
+.INPUTBOX .inputbox p .ntnc {
+    width: 62%;
+}
+
+.INPUTBOX .inputbox p select {
+    font-size: 14px;
+    color: #555;
+}
+
+
+/* 姓名，电话，验证码的input调整 */
+
+input {
+    border: 1px solid rgba(0, 0, 0, 0.75);
+}
+
+
+/* 各个select标签样式调整 */
+
+.bd {
+    margin-bottom: 3px;
+    outline: none;
+    border-color: #E1E1E1;
+    border-width: 1px;
+    border-radius: 4px;
+}
+
+
+/* 预约服务下的select */
+
+#ser {
+    /* height: 24px; */
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+
+/* 预约日期下的select */
+
+#dt {
+    width: 70px;
+    max-width: 80%;
+    font-size: 14px;
+}
+
+.codes .code {
+    position: relative;
+    margin-left: 100px;
+    display: block;
+    max-width: 115px;
+    border: 1px solid #f3f3f3;
+    box-sizing: border-box;
+    width: 100%;
+    height: 40px;
+    background: rgba(210, 157, 154, 0.3);
+    color: #3e3e3e;
+    font-size: 14px;
+}
+
+.codes .iconfont {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+    opacity: 0;
+}
+
+.codes button:hover {
+    opacity: 0.6;
+}
+
+.codes button:hover .iconfont {
+    opacity: 1;
+}
+
+.submit button {
+    padding-left: 20px;
+    box-sizing: border-box;
+    width: 98px;
+    height: 28px;
+    background-color: #333333;
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    line-height: 14px;
+}
+
+.submit button:hover {
+    background-color: #ff6200;
+}
+
+
+/* 在线预约信息部分结束  */

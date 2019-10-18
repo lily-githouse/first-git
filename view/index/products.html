@@ -1,0 +1,174 @@
+<?php
+$goods=$id;
+    $cate = [['id'=>0,'Cname'=>'全部']];
+    $sql = "select * from category order by id asc";
+    $cate1 = $mysql->query($sql)->fetch_all(MYSQLI_ASSOC);
+    $cate = array_merge($cate,$cate1);
+    $sql = "select * from goods";
+    $all = $mysql->query($sql)->fetch_all(MYSQLI_ASSOC);
+    $len = count($cate);
+    for($i=0;$i<$len;$i++){
+        $items = $cate[$i];
+        $id = $items['id'];
+        if($i == 0){
+            $cate[$i]['goods'] = $all;
+            continue;
+        }
+        $cate[$i]['goods'] = array_filter($all,function($v) use($id){
+            return  $v['cid'] == $id;
+        });
+    }
+?>
+<link rel="stylesheet" href="../static/css/products.css">
+<!-- 产品中心部分开始 -->
+<div class="container">
+    <div class="box">
+        <!-- 产品中心大图部分开始 -->
+        <div class="row">
+            <div class="banner-img col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <img src="../static/image/products2-banner.jpg" alt=" ">
+            </div>
+        </div>
+        <!-- 产品中心大图部分结束 -->
+        <!-- 产品中心标题部分开始 -->
+        <div class="row about col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="column about-left "></div>
+            <div class="column about-middle">
+                <div class="about-title-zw"><?php echo $navl['nname'];?></div>
+                <div class="about-title-yw"><?php echo $navl['ename'];?></div>
+            </div>
+            <div class="column about-right"></div>
+        </div>
+    </div>
+</div>
+<!-- 产品中心标题部分结束 -->
+<!-- 列表图片及文字开始 -->
+<!-- 选项开始 -->
+<div class="container picture">
+    <div class="row ">
+        <ul class="item-box col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <?php
+            foreach($cate as $key=>$value){
+            $goods=$value['goods'];?>
+            <li class="item ">
+                <span><?php echo $value['Cname'];?></span>
+                <div class="underline sel"></div>
+                <div class="firstrow-picture col-lg-10 col-md-10 col-sm-10 col-xs-10" style="opacity: 1;">
+                    <?php foreach($goods as $key=>$value){?>
+                    <div class="p-box col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                        <div class="p-item ">
+                            <a href="productson.php?id=<?php echo $value['id'];?>">
+                                <img src="<?php echo $value['gthumb'];?>" alt="无法显示 ">
+                            </a>
+                        </div>
+                        <div class="p-word ">
+                            <a href="productson.php?id=<?php echo $value['id'];?>"> <?php echo $value['gname'];?></a>
+                        </div>
+                    </div>
+                    <?php } ?>
+                </div>
+            </li>
+            <?php }?>
+        </ul>
+        <!-- </div> -->
+    </div>
+    <!-- 选项结束 -->
+</div>
+<!-- 首行图片结束 -->
+<!-- 底部 -->
+<div class="bar" style="margin-top: 800px;">
+    <div class="bar-b">
+        <div class="address">
+            <div>
+                <strong>一店地址</strong>
+            </div>
+            <div></div>
+            <div>
+                <span>门店地址：上海市松江区佘山林荫大道18号</span>
+            </div>
+            <p>
+                <span>预约电话:</span>
+                <strong>400-562-6654 </strong>
+            </p>
+            <p></p>
+            <p>
+                <strong class="s">营业时间：</strong>
+            </p>
+            <p>
+                <span>周一 ~周五：上午9:30-下午8:00</span>
+            </p>
+            <p>
+                <span>周六、周日：上午10:00-下午9:00</span>
+            </p>
+        </div>
+        <div class="address">
+            <div>
+                <strong>一店地址</strong>
+            </div>
+            <div></div>
+            <div>
+                <span>门店地址：上海市松江区佘山林荫大道18号</span>
+            </div>
+            <p>
+                <span>预约电话:</span>
+                <strong>400-562-6654 </strong>
+            </p>
+            <p></p>
+            <p>
+                <strong class="s">营业时间：</strong>
+            </p>
+            <p>
+                <span>周一 ~周五：上午9:30-下午8:00</span>
+            </p>
+            <p>
+                <span>周六、周日：上午10:00-下午9:00</span>
+            </p>
+        </div>
+        <div class="address">
+            <div>
+                <strong>一店地址</strong>
+            </div>
+            <div></div>
+            <div>
+                <span>门店地址：上海市松江区佘山林荫大道18号</span>
+            </div>
+            <p>
+                <span>预约电话:</span>
+                <strong>400-562-6654 </strong>
+            </p>
+            <p></p>
+            <p>
+                <strong class="s">营业时间：</strong>
+            </p>
+            <p>
+                <span>周一 ~周五：上午9:30-下午8:00</span>
+            </p>
+            <p>
+                <span>周六、周日：上午10:00-下午9:00</span>
+            </p>
+        </div>
+    </div>
+    <div class="icon">
+        <i class="iconfont icon-qq"></i>
+        <i class="iconfont icon-weixin1"></i>
+        <i class="iconfont icon-email"></i>
+        <i class="iconfont icon-dianhua1"></i>
+        <i class="iconfont icon-face-book"></i>
+        <div>
+            <span>版权所有 2019-2020 汽车美容工作室 技术支持：起飞页</span>
+        </div>
+    </div>
+</div>
+<!-- 小于992的底部 -->
+<a href="">
+    <div class="dbbottom">
+        在线预约
+    </div>
+</a>
+<div class="zdJiantou">
+    <a href="">
+        <i class="iconfont icon-fanhuidingbu1"></i>
+    </a>
+</div>
+<script src="../static/js/products.js"></script>
+<script src="../static/js/jquery-3.4.1.min.js"></script>
